@@ -65,3 +65,41 @@ car2.accelerate(200);
 console.log(car2.status());
 
 
+// TV Class with all kinds of good attributes
+
+class TV {
+
+	constructor(brand) {
+		this.brand   = brand;
+		this.channel = 1;
+		this.volume  = 50;
+	}
+
+	changeVolume(amount) {
+		const warningMessage = 'cant do that, volume would end up';
+		if (Math.sign(amount) === 1 ) {
+			const res = this.volume !== 0 && this.volume !== 100 ? this.volume += amount : console.log(`${warningMessage} too loud`);
+		} else {
+			const res = this.volume !== 0 && this.volume !== 100 ? this.volume += amount : console.log(`${warningMessage} muted`);
+		}
+		return res;
+	}
+	setChannel(number) {
+		const warningMessage = 'cant do that,';
+		const res = number < 0 || number > 50 ? console.log(`${warningMessage} you only have channels 1 - 50`): this.channel = number;
+		return res;
+	}
+
+	reset() {
+		this.channel = 1;
+		this.volume  = 50;
+	}
+
+	status() {
+		console.log(`The ${this.brand} is on Volume Level: ${this.volume} and Channel: ${this.channel}`);
+
+	}
+
+}
+
+const SamsungTV = new TV('Samsung');
