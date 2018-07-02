@@ -62,7 +62,7 @@ p2 = p3;
 p.price = p2.price;
 
 // Try to guess what this will print, and uncomment this line to check
-//console.log("The mysterious product is: " + p);
+console.log("The mysterious product is: " + p);
 
 
 
